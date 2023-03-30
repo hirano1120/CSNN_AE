@@ -32,4 +32,6 @@ python CSNN_AE/sample/test_auto_encoder.py
 
 大きなガウシアンノイズがかかっても、元の画像が再構成される
 
+ノイズのかかった画像(真ん中)を学習済みのオートエンコーダに入力すると、ノイズの除去された再構成画像(右)が出力される
+
 ![alt](/CSNN_AE/sample/reconst_imgs/reconst_img_epoch5000.png)
