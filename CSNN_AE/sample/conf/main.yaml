@@ -1,0 +1,47 @@
+hydra:
+  run:
+    dir: ./
+  output_subdir: null
+  job_logging: null
+
+
+auto_encoder: 
+  type: CSNN
+
+  img_encoder:
+    encoder:
+      dt: 1
+      T: 30
+
+    csnn:
+      alpha: 2.2
+      layer_num: 3
+      img_size: 128
+      in_channel: 1
+      conv:
+        hidden_channel: [8,16,32]
+        padding: [0,0,0]
+        stride: [4,4,4]
+        kernel: [4,4,4]
+      pool:
+        kernel: []
+        stride: []
+
+    decoder:
+      in_size: None
+      in_channel: ${csnn.conv.hidden_channel[-1]}
+
+  img_decoder:
+    nt: ${auto_encoder.img_encoder.encoder.T}
+
+    csnn_transpose:
+      alpha: ${auto_encoder.img_encoder.csnn.alpha}
+      layer_num: 3
+      latent_size: 2
+      latent_channel: 32
+
+      transpose:
+        hidden_channel: [16,8, 1]
+        padding: [0,0,0]
+        stride: [4,4,4]
+        kernel: [4,4,4]
