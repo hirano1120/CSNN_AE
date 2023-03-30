@@ -32,5 +32,4 @@ python CSNN_AE/sample/test_auto_encoder.py
 
 大きなガウシアンノイズがかかっても、元の画像が再構成される
 
-![alt]
-(/CSNN_AE/sample/reconst_imgs/reconst_img_epoch5000.png)
+![alt](/CSNN_AE/sample/reconst_imgs/reconst_img_epoch5000.png)
