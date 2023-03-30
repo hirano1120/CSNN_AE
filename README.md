@@ -13,7 +13,9 @@
 - pillow
 - matplotlib
 
-##Sample
+## Sample
+
 オートエンコーダの学習
+
 ~~~python CSNN_AE/sample/train_auto_encoder.py~~~
 
